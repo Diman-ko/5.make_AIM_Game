@@ -24,7 +24,8 @@ timeList.addEventListener('click', event => {
 
 function startGame () {
     setInterval(decreaseTime, 1000)
-    timeEl.innerHTML = `00:${time}`
+    setTime(time)
+    //timeEl.innerHTML = `00:${time}`
 }
 
 function decreaseTime() {
@@ -32,5 +33,10 @@ function decreaseTime() {
     if (current < 10) {
         current = `0${current}`
     }
-    timeEl.innerHTML = `00:${current}`
+    setTime(current)
+    //timeEl.innerHTML = `00:${current}`
+}
+
+function  setTime(value) {
+    timeEl.innerHTML = `00:${value}`
 }
