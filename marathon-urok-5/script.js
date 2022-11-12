@@ -29,14 +29,23 @@ function startGame () {
 }
 
 function decreaseTime() {
-    let current = --time
-    if (current < 10) {
-        current = `0${current}`
+    if (time === 0) {
+    finishGame()
+    }else {
+        let current = --time
+        if (current < 10) {
+            current = `0${current}`
+        }
+        setTime(current)
     }
-    setTime(current)
+
     //timeEl.innerHTML = `00:${current}`
 }
 
 function  setTime(value) {
     timeEl.innerHTML = `00:${value}`
+}
+
+function  finishGame() {
+
 }
