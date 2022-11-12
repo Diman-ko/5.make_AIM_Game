@@ -1,5 +1,5 @@
-const screens = document.querySelectorAll('.screen')
 const startBtn = document.querySelector('#start')
+const screens = document.querySelectorAll('.screen')
 const timeList = document.querySelector('#time-list')
 startBtn.addEventListener('click', (event) => {
     event.preventDefault()
@@ -8,7 +8,10 @@ startBtn.addEventListener('click', (event) => {
 
 
 
-time-list.addEventListener('click', event => {
+timeList.addEventListener('click', event => {
+    if (event.target.classList.contains('time-btn')) {
+        console.log(event.target)
 
+    }
 
 })
