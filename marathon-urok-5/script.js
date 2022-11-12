@@ -13,8 +13,13 @@ startBtn.addEventListener('click', (event) => {
 
 timeList.addEventListener('click', event => {
     if (event.target.classList.contains('time-btn')) {
-        console.log(event.target)
-
+        console.log(parseInt(event.target.getAttribute('data-time')))
+        time = (parseInt(event.target.getAttribute('data-time')))
+        startGame()
     }
 
 })
+
+function startGame () {
+    screens[1].classList.add('up')
+}
