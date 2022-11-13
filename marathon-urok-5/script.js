@@ -5,6 +5,7 @@ const timeEl = document.querySelector('#time')
 const board = document.querySelector('#board')
 
 let time = 0
+let score = 0
 
 startBtn.addEventListener('click', (event) => {
     event.preventDefault()
@@ -19,6 +20,15 @@ timeList.addEventListener('click', event => {
         time = (parseInt(event.target.getAttribute('data-time')))
         screens[1].classList.add('up')
         startGame()
+    }
+
+})
+
+board.addEventListener('click', event => {
+    if (event.target.classList.contains('circle')) {
+        score++
+        event.target.remove()
+        createRandomCircle()
     }
 
 })
@@ -49,8 +59,11 @@ function  setTime(value) {
 }
 
 function  finishGame() {
-
+    //timeEl.parentNode.remove()
+    timeEl.parentNode.classList.add('hide')
+    board.innerHTML = `<h1>GAME OVER: <span class="primary">${score}</span></h1>`
 }
+
 
 function createRandomCircle() {
     const circle = document.createElement('div')
